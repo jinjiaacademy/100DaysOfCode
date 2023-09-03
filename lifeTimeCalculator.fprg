@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-01 11:05:45 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzEwOjQ1OjE4IFBNOzI4OTM="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzExOjA1OjQ1IFBNOzI7Mjk5OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Create a program using maths and f-strings that tells us how many days,weeks, months we have left if we live until 90 years old.It will take your current age as the input and output a message with our time left in this format:&#13;&#10;You have x days, y weeks, and z months left."/>
+            <declare name="age, yearsLeft, daysLeft, weeksLeft, monthsLeft" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your current age: &quot;" newline="True"/>
+            <input variable="age"/>
+            <assign variable="yearsLeft" expression="90 - age"/>
+            <assign variable="daysLeft" expression="yearsLeft * 365"/>
+            <assign variable="weeksLeft" expression="yearsLeft * 52"/>
+            <assign variable="monthsLeft" expression="yearsLeft * 12"/>
+            <output expression="&quot;You have &quot; &amp; daysLeft &amp; &quot; days, &quot; &amp; weeksLeft &amp; &quot; weeks, and &quot; &amp; monthsLeft &amp; &quot; months left.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
