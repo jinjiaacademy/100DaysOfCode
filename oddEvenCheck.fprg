@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-02 01:18:22 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzEyOjQ1OjU3IFBNOzI4OTk="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzAxOjE4OjIyIFBNOzI7Mjk5OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Write a program that works out whether if a given number is an odd or even number."/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a number: &quot;" newline="True"/>
+            <input variable="num"/>
+            <if expression="num % 2 == 0">
+                <then>
+                    <output expression="num &amp; &quot; is an even number.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="num &amp; &quot; is an odd number.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
