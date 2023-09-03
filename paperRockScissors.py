@@ -7,9 +7,14 @@ Created on Sun Sep  3 11:56:10 2023
 
 import random
 
+choices = ["paper", "rock", "scissors"]
 human = input("What do you choose? Paper, rock or scissor? ").lower()
 computer = random.choice(['paper', 'rock', 'scissor'])
-print(f"You: {human} vs. Computer: {computer}")
+
+if human not in choices:
+    print("You entered the invalid words, Game over!!")
+else:
+    print(f"You: {human} vs. Computer: {computer}")
 
 if computer == "paper":
     if human == "paper":
