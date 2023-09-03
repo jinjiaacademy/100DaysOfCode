@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-01 07:30:41 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzA3OjA1OjExIFBNOzI4ODg="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzA3OjMwOjQxIFBNOzI7Mjk5OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Ask the user to enter a 2-digit number e.g. 35, then calculate the sum of 2 digits: 3 + 5 = 8"/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="numStr" type="String" array="False" size=""/>
+            <declare name="sumDigit" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a 2-digit number, e.g. 35: &quot;" newline="True"/>
+            <input variable="num"/>
+            <assign variable="numStr" expression="ToString(num)"/>
+            <assign variable="sumDigit" expression="ToInteger(Char(numStr, 0)) + ToInteger(Char(numStr, 1))"/>
+            <output expression="&quot;The sum of 2-digit number &quot; &amp; numStr &amp; &quot; is &quot; &amp; sumDigit" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
