@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-01 07:37:47 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzA3OjMwOjQyIFBNOzI4OTA="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzA3OjM3OjQ3IFBNOzI7MzAxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Ask the users to input their weight(kg) and height(m), to calculate their BMI using the formula: BMI = weight(kg)/(height(m)^2)"/>
+            <declare name="weight, height, BMI" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter your weight in kg: &quot;" newline="True"/>
+            <input variable="weight"/>
+            <output expression="&quot;Enter your height in m: &quot;" newline="True"/>
+            <input variable="height"/>
+            <assign variable="BMI" expression="weight / (height ^ 2)"/>
+            <output expression="&quot;Your BMI is &quot; &amp; BMI" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
