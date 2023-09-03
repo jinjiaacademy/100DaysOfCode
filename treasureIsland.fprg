@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-02 10:39:29 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzEwOjE3OjIzIFBNOzI4ODk="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzEwOjM5OjI5IFBNOzM7MzAwOQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="direction, action, door" type="String" array="False" size=""/>
+            <output expression="&quot;Welcome to Treasure Island. Your mission is to find the treasure.&quot;" newline="True"/>
+            <output expression="&quot;You're at a cross road. Where do you want to go? Type 'left' or 'right'&quot;" newline="True"/>
+            <input variable="direction"/>
+            <if expression="direction == &quot;left&quot;">
+                <then>
+                    <output expression="&quot;Swim or wait?&quot;" newline="True"/>
+                    <input variable="action"/>
+                    <if expression="action == &quot;wait&quot;">
+                        <then>
+                            <output expression="&quot;Which door would you like to choose? Red, Yellow, or Blue.&quot;" newline="True"/>
+                            <input variable="door"/>
+                            <if expression="door == &quot;yellow&quot;">
+                                <then>
+                                    <output expression="&quot;You win!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="door == &quot;red&quot;">
+                                        <then>
+                                            <output expression="&quot;Burned by fire. Game over.&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Eaten by beasts.Game over.&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Attacked by trout. Game over.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Fall into a hole. Game over.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
