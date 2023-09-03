@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-03 12:56:53 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAzOzEyOjM0OjE5IFBNOzI4OTY="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAzOzEyOjU2OjUzIFBNOzM7MzAwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="human, computer" type="String" array="False" size=""/>
+            <output expression="&quot;What do you choose: paper, rock, scissor? &quot;" newline="True"/>
+            <input variable="human"/>
+            <output expression="&quot;Computer choose: &quot;" newline="True"/>
+            <input variable="computer"/>
+            <output expression="&quot;Human: &quot; &amp; human &amp; &quot; vs. &quot; &amp; &quot;Computer: &quot; &amp; computer" newline="True"/>
+            <if expression="computer == &quot;paper&quot;">
+                <then>
+                    <if expression="human == &quot;paper&quot;">
+                        <then>
+                            <output expression="&quot;Tie&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="human == &quot;rock&quot;">
+                                <then>
+                                    <output expression="&quot;Computer wins&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Human wins&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="computer == &quot;rock&quot;">
+                        <then>
+                            <if expression="human == &quot;paper&quot;">
+                                <then>
+                                    <output expression="&quot;Human wins&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="human == &quot;rock&quot;">
+                                        <then>
+                                            <output expression="&quot;Tie&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Computer wins&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="human == &quot;paper&quot;">
+                                <then>
+                                    <output expression="&quot;Computer wins&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="human == &quot;rock&quot;">
+                                        <then>
+                                            <output expression="&quot;Human wins&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Tie&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
