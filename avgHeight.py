@@ -16,4 +16,5 @@ for i in range(1, students+1):
     total += height    
 averageHeight = total/students
 
-print(f"There are {students} students in the group and the average height is {averageHeight:.2f}cm.")
+print(f"There are {students} students in the group.")
+print(f"The average height in the group is {averageHeight:.2f}cm.")
