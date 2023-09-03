@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-02 09:24:58 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzA4OjQ2OjUyIFBNOzI5MDA="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzA5OjI0OjU4IFBNOzM7MzAxMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="You've got a job at Python Pizza. Your first job is to build an automatic pizza order system.&#13;&#10;Based on a user's order, work out their final bill.&#13;&#10;-Small Pizza: $15&#13;&#10;-Medium Pizza: $20&#13;&#10;-Large Pizza: $25&#13;&#10;&#13;&#10;-Pepperoni for Small Pizza: +$2&#13;&#10;-Pepperoni for Medium or Large Pizza: +$3&#13;&#10;-Extra Cheese for any size pizza: +$1"/>
+            <declare name="small, medium, large, pepSmall, pepML, extraCheeseCharge, finalBill" type="Integer" array="False" size=""/>
+            <declare name="size, addPepperoni, extraCheese" type="String" array="False" size=""/>
+            <assign variable="small" expression="15"/>
+            <assign variable="medium" expression="20"/>
+            <assign variable="large" expression="25"/>
+            <assign variable="pepSmall" expression="2"/>
+            <assign variable="pepML" expression="3"/>
+            <assign variable="extraCheeseCharge" expression="1"/>
+            <output expression="&quot;Welcome to Python Pizza Deliveries!&quot;" newline="True"/>
+            <output expression="&quot;What size pizza do you want? S, M, or L &quot;" newline="True"/>
+            <input variable="size"/>
+            <output expression="&quot;Do you want pepperoni? Y or N &quot;" newline="True"/>
+            <input variable="addPepperoni"/>
+            <output expression="&quot;Do you want extra cheese? Y or N &quot;" newline="True"/>
+            <input variable="extraCheese"/>
+            <if expression="size == &quot;S&quot;">
+                <then>
+                    <assign variable="finalBill" expression="small"/>
+                    <if expression="addPepperoni == &quot;Y&quot;">
+                        <then>
+                            <assign variable="finalBill" expression="finalBill + pepSmall"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else>
+                    <if expression="size == &quot;M&quot;">
+                        <then>
+                            <assign variable="finalBill" expression="medium"/>
+                        </then>
+                        <else>
+                            <assign variable="finalBill" expression="large"/>
+                        </else>
+                    </if>
+                    <if expression="addPepperoni == &quot;Y&quot;">
+                        <then>
+                            <assign variable="finalBill" expression="finalBill + pepML"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <if expression="extraCheese == &quot;Y&quot;">
+                <then>
+                    <assign variable="finalBill" expression="finalBill + extraCheeseCharge"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;Your final bill is &quot; &amp; finalBill" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
