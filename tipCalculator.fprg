@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-01 11:47:13 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzExOjE3OjE4IFBNOzI4OTM="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAxOzExOjQ3OjEzIFBNOzM7MzAwMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Ask the user to enter the total bill and calculate the money everyone should pay with tips. The tip rates options are 10, 12 or 15 percentage."/>
+            <declare name="totalBill, tipPercentage, numPeople, pay" type="Real" array="False" size=""/>
+            <output expression="&quot;Welcome to the tip calculator.&quot;" newline="True"/>
+            <output expression="&quot;What was the total bill?&quot;" newline="True"/>
+            <input variable="totalBill"/>
+            <output expression="&quot;What percentage tip would you like to give? 10, 12, or 15?&quot;" newline="True"/>
+            <input variable="tipPercentage"/>
+            <output expression="&quot;How many people to split the bill?&quot;" newline="True"/>
+            <input variable="numPeople"/>
+            <assign variable="pay" expression="totalBill * (1 + tipPercentage/100) / numPeople"/>
+            <output expression="&quot;Each person should pay: &quot; &amp; pay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
