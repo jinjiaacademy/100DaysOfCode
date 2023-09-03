@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-02 01:53:19 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzAxOjI5OjEwIFBNOzI4ODg="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAyOzAxOjUzOjE5IFBNOzQ7MzAwNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Write a program that interprets the BMI based on a user's wieght and height.&#13;&#10;It should tell them the interpretation of their BMI based on the BMI value.&#13;&#10; - Under 18.5 they are underweight&#13;&#10; - Over 18.5 but below 25 they have a normal weight&#13;&#10; - Over 25 but below 30 they are overweight&#13;&#10; - Over 30 but below 35 they are obese&#13;&#10; - Above 35 they are clinically obese"/>
+            <declare name="weight, height, BMI" type="Real" array="False" size=""/>
+            <declare name="condition" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your weight in kilograms: &quot;" newline="True"/>
+            <input variable="weight"/>
+            <output expression="&quot;Enter your height in meters: &quot;" newline="True"/>
+            <input variable="height"/>
+            <assign variable="BMI" expression="weight / height^2"/>
+            <if expression="BMI &lt; 18.5">
+                <then>
+                    <assign variable="condition" expression="&quot;underweight&quot;"/>
+                </then>
+                <else>
+                    <if expression="BMI &lt; 25">
+                        <then>
+                            <assign variable="condition" expression="&quot;normal weight&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="BMI &lt; 30">
+                                <then>
+                                    <assign variable="condition" expression="&quot;overweight&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &lt; 35">
+                                        <then>
+                                            <assign variable="condition" expression="&quot;obese&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="condition" expression="&quot;clinically obese&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Your BMI is &quot; &amp; BMI &amp; &quot;, and you are &quot; &amp; condition &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
