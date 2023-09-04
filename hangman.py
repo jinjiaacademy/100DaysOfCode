@@ -22,7 +22,7 @@ life = 9
 while gameRunning:
     guess = input("Guess a letter: ").lower()
     
-    if guess in chosen_word and guess not in "".join(display):
+    if guess in chosen_word:
         if guess not in "".join(display):
             for i in range(word_length):
                 letter = chosen_word[i]
