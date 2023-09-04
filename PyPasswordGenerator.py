@@ -36,6 +36,7 @@ for i in range(numNumbers):
     numberChosen += random.choice(numbers)
     
 password = list(letterChosen + symbolChosen + numberChosen)
-password = random.sample(password, len(password))
+random.shuffle(password)
+# password = random.sample(password, len(password))
 password = "".join(password)
 print(f"Here is the password: {password}")
