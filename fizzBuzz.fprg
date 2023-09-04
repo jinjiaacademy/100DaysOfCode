@@ -4,23 +4,28 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Jinjia"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-09-03 09:14:05 PM"/>
+        <attribute name="saved" value="2023-09-03 09:22:16 PM"/>
         <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAzOzA5OjA5OjQ2IFBNOzI5MDQ="/>
-        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAzOzA5OjE0OjA1IFBNOzI7MzAwNA=="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTAzOzA5OjIyOjE2IFBNOzQ7MzAwNw=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="number" type="Integer" array="False" size=""/>
+            <declare name="number, fizz, buzz, fizzBuzz" type="Integer" array="False" size=""/>
+            <assign variable="fizz" expression="0"/>
+            <assign variable="buzz" expression="0"/>
+            <assign variable="fizzBuzz" expression="0"/>
             <for variable="number" start="1" end="100" direction="inc" step="1">
                 <if expression="number % 3 == 0">
                     <then>
                         <if expression="number % 5 == 0">
                             <then>
                                 <output expression="&quot;FizzBuzz&quot;" newline="True"/>
+                                <assign variable="fizzBuzz" expression="fizzBuzz + 1"/>
                             </then>
                             <else>
                                 <output expression="&quot;Fizz&quot;" newline="True"/>
+                                <assign variable="fizz" expression="fizz + 1"/>
                             </else>
                         </if>
                     </then>
@@ -28,6 +33,7 @@
                         <if expression="number % 5 == 0">
                             <then>
                                 <output expression="&quot;Buzz&quot;" newline="True"/>
+                                <assign variable="buzz" expression="buzz + 1"/>
                             </then>
                             <else>
                                 <output expression="number" newline="True"/>
@@ -36,6 +42,7 @@
                     </else>
                 </if>
             </for>
+            <output expression="&quot;There are &quot; &amp; fizz &amp; &quot; Fizz, &quot; &amp; buzz &amp; &quot; Buzz, and &quot; &amp; fizzBuzz &amp; &quot; FizzBuzz.&quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
