@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-04 01:59:43 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA0OzAxOjEwOjAwIFBNOzI4Nzk="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA0OzAxOjU5OjQzIFBNOzE7MzAwNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <while expression="gameRunning">
+                <output expression="&quot;Ask the user to enter a letter guess: &quot;" newline="True"/>
+                <if expression="guess in chosen word">
+                    <then>
+                        <if expression="guess not in letter guessed">
+                            <then>
+                                <output expression="&quot;display the word fill the letter guessed&quot;" newline="True"/>
+                                <if expression="guessed letter word == chosen word">
+                                    <then>
+                                        <assign variable="gameRunning" expression="False"/>
+                                        <output expression="&quot;You win&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <output expression="&quot;You have guess the letter. You lost one life&quot;" newline="True"/>
+                                <assign variable="life" expression="life - 1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;life minus 1&quot;" newline="True"/>
+                        <if expression="life == 0">
+                            <then>
+                                <assign variable="gameRunning" expression="False"/>
+                                <output expression="&quot;You lose.&quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
