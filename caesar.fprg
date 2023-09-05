@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-05 12:31:56 AM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA0OzExOjAyOjEwIFBNOzI4ODI="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzEyOjMxOjU2IEFNOzk7Mjk5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="programRunning" type="Boolean" array="False" size=""/>
+            <declare name="decision, direction, message" type="String" array="False" size=""/>
+            <declare name="shift" type="Integer" array="False" size=""/>
+            <assign variable="programRunning" expression="True"/>
+            <while expression="programRunning">
+                <output expression="&quot;Welcome to the Caesor Cipher Application. Do you want to carry out the caesor cipher application? yes or no ? &quot;" newline="True"/>
+                <input variable="decision"/>
+                <if expression="decision == &quot;yes&quot;">
+                    <then>
+                        <output expression="&quot;Do you want to encode or decode? &quot;" newline="True"/>
+                        <input variable="direction"/>
+                        <output expression="&quot;Please enter your message: &quot;" newline="True"/>
+                        <input variable="message"/>
+                        <output expression="&quot;Please enter the amount of shift: &quot;" newline="True"/>
+                        <input variable="shift"/>
+                        <call expression="caesor(direction, message, shift)"/>
+                    </then>
+                    <else>
+                        <assign variable="programRunning" expression="False"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Thank you for using the Caesor Cipher Application. Good Bye! &quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="caesor" type="String" variable="finalText">
+        <parameters>
+            <parameter name="cipherDirection" type="String" array="False"/>
+            <parameter name="cipherMessage" type="String" array="False"/>
+            <parameter name="shiftAmount" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="finalText, alphabet, letter" type="String" array="False" size=""/>
+            <assign variable="alphabet" expression="&quot;abcdefghijklmnopqrstuvwxyz&quot;"/>
+            <assign variable="finalText" expression="&quot;&quot;"/>
+            <for variable="" start="" end="" direction="inc" step="">
+                <if expression="letter in alphabet">
+                    <then>
+                        <assign variable="position" expression="alphabet.index(letter)"/>
+                        <if expression="cipherDirection == &quot;encode&quot;">
+                            <then>
+                                <if expression="">
+                                    <then/>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <assign variable="newPositon" expression="position - shiftAmount"/>
+                            </else>
+                        </if>
+                        <assign variable="finalText" expression="finalText + alphabet[newPosition]"/>
+                    </then>
+                    <else>
+                        <assign variable="finalText" expression="finalText + letter"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
