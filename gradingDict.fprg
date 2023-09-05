@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-05 10:31:40 AM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzEwOjI4OjIzIEFNOzI4Nzk="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzEwOjMxOjQwIEFNOzE7Mjk4MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="score" type="Real" array="False" size=""/>
+            <declare name="grade" type="String" array="False" size=""/>
+            <if expression="scores &gt;= 91">
+                <then>
+                    <assign variable="grade" expression="&quot;Outstanding&quot;"/>
+                </then>
+                <else>
+                    <if expression="scores &gt;= 81">
+                        <then>
+                            <assign variable="grade" expression="&quot;Exceeds Expectations&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="scores &gt;= 71">
+                                <then>
+                                    <assign variable="grade" expression="&quot;Acceptable&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="grade" expression="&quot;Fail&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="grade" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
