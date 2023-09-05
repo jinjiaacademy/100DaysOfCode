@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-05 12:22:33 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzExOjEzOjA5IEFNOzI4Nzg="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzEyOjIyOjMzIFBNOzE7Mjk5OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="programRunning" type="Boolean" array="False" size=""/>
+            <declare name="name, otherBidder" type="String" array="False" size=""/>
+            <declare name="bid" type="Real" array="False" size=""/>
+            <assign variable="programRunning" expression="True"/>
+            <while expression="programRunning">
+                <output expression="&quot;Welcome to the secret auction program.&quot;" newline="True"/>
+                <output expression="&quot;What is your name? &quot;" newline="True"/>
+                <input variable="name"/>
+                <output expression="&quot;What is your bid?&quot;" newline="True"/>
+                <input variable="bid"/>
+                <output expression="&quot;Are there any other bidders? Type 'yes' or 'no'.&quot;" newline="True"/>
+                <input variable="otherBidder"/>
+                <if expression="otherBidder == &quot;yes&quot;">
+                    <then/>
+                    <else>
+                        <assign variable="programRunning" expression="False"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
