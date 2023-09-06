@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-06 11:43:45 AM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA2OzEwOjAyOjQ2IEFNOzI4Nzc="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA2OzExOjQzOjQ1IEFNOzU7Mjk5NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="gameRunning, cardPicking" type="Boolean" array="False" size=""/>
+            <declare name="gameOption, anotherCard, finalResult" type="String" array="False" size=""/>
+            <assign variable="gameRunning" expression="True"/>
+            <assign variable="cardPicking" expression="True"/>
+            <while expression="gameRunning">
+                <output expression="&quot;Do you want to play a game of blackjack ? Type 'y' or 'n': &quot;" newline="True"/>
+                <input variable="gameOption"/>
+                <if expression="gameOption == &quot;y&quot;">
+                    <then>
+                        <output expression="&quot;Your card : [a, b], current score: a + b&quot;" newline="True"/>
+                        <output expression="&quot;Computer's first card: n &quot;" newline="True"/>
+                        <while expression="cardPicking">
+                            <output expression="&quot;Type 'y' to get another card, type 'n' to pass&quot;" newline="True"/>
+                            <input variable="anotherCard"/>
+                            <if expression="anotherCard == &quot;y&quot;">
+                                <then>
+                                    <output expression="&quot;Your cards [a, b, c], current score : a+b+c&quot;" newline="True"/>
+                                    <output expression="&quot;Computer's first card: n&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Your final card is [a, b] final score: a + b&quot;" newline="True"/>
+                                    <while expression="computer &lt; 17">
+                                        <output expression="&quot;Keep picking&quot;" newline="True"/>
+                                    </while>
+                                    <output expression="&quot;Computer's final hand: [n, m], final score: n + m&quot;" newline="True"/>
+                                    <assign variable="cardPicking" expression="False"/>
+                                </else>
+                            </if>
+                        </while>
+                        <output expression="finalResult" newline="True"/>
+                        <output expression="&quot;Do you want to play a game of Blackjack? Type 'y' or 'n': &quot;" newline="True"/>
+                        <input variable="gameOption"/>
+                        <if expression="gameOption == &quot;y&quot;">
+                            <then/>
+                            <else>
+                                <assign variable="gameRunning" expression="False"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <assign variable="gameRunning" expression="False"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="winOrLose" type="None" variable="">
+        <parameters/>
+        <body>
+            <if expression="player &gt; 21">
+                <then>
+                    <output expression="&quot;You bust and lost!!!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="player == 21">
+                        <then>
+                            <output expression="&quot;You win!!!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="player == computer">
+                                <then>
+                                    <output expression="&quot;Draw!!!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="player &lt; computer">
+                                        <then>
+                                            <if expression="computer &lt; 21">
+                                                <then>
+                                                    <output expression="&quot;You lose!!!&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;You win!!!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;You win!!!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
