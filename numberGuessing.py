@@ -7,22 +7,24 @@ Created on Wed Sep  6 13:03:08 2023
 import random
 
 def numberGuess():
-    target = random.choice(list(range(1, 101)))
     
-    print("Welcome to the Number Guessing Game!")
-    print("I am thinking of a number between 1 and 100.")
+    target = random.randint(1, 100)
+    
+    print("Welcome to the Number Guessing Game!\n")
+    print("I am thinking of a number between 1 and 100.\n")
     
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
     
-    attempt = 0
+    turns = 0
     
     if difficulty == "easy":
         attempts = 10
     else:
         attempts = 5
         
-    while attempt < attempts:
-        print(f"You have {attempts-attempt} attempts remaining to guess the number.")
+    while turns < attempts:
+        
+        print(f"You have {attempts-turns} attempts remaining to guess the number.")
         guess = int(input("Make a guess: "))
         
         if guess == target:
@@ -33,9 +35,10 @@ def numberGuess():
                 print("Too high.")
             else:
                 print("Too low.")
-            print("Guess again!")
+        print("Guess again!")
         
-        attempt += 1
+        turns += 1
+        
     print("You run out of your attempts.")
     
 numberGuess()
