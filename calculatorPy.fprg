@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-05 03:00:05 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzAxOjM1OjI4IFBNOzI4OTc="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA1OzAzOjAwOjA1IFBNOzM7Mjk5Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="firstNum, secondNum, result, otherNum" type="Real" array="False" size=""/>
+            <declare name="operator, option" type="String" array="False" size=""/>
+            <output expression="&quot;What is the first number: &quot;" newline="True"/>
+            <input variable="firstNum"/>
+            <output expression="&quot;Pick an operator: + - * / &quot;" newline="True"/>
+            <input variable="operator"/>
+            <output expression="&quot;What is the next number: &quot;" newline="True"/>
+            <input variable="secondNum"/>
+            <assign variable="result" expression="calculation(firstNum, secondNum, operator)"/>
+            <output expression="firstNum &amp; operator &amp; &quot; = &quot; &amp; result" newline="True"/>
+            <output expression="&quot;Type 'y' to continue calculating with &quot; &amp; result &amp; &quot; or type 'n' to start a new calculation: &quot;" newline="True"/>
+            <input variable="option"/>
+            <while expression="option == &quot;y&quot;"/>
+        </body>
+    </function>
+    <function name="add" type="Real" variable="sum">
+        <parameters>
+            <parameter name="firstNumber" type="Real" array="False"/>
+            <parameter name="secondNumber" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="sum" type="Real" array="False" size=""/>
+            <assign variable="sum" expression="firstNumber + secondNumber"/>
+        </body>
+    </function>
+    <function name="calculation" type="Real" variable="result">
+        <parameters>
+            <parameter name="firstNumber" type="Real" array="False"/>
+            <parameter name="secondNumber" type="Real" array="False"/>
+            <parameter name="operator" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Real" array="False" size=""/>
+            <if expression="operator == &quot;+&quot;">
+                <then>
+                    <assign variable="result" expression="add(firstNumber, secondNumber)"/>
+                </then>
+                <else>
+                    <if expression="operator == &quot;-&quot;">
+                        <then>
+                            <assign variable="result" expression="minus(firstNumber, secondNumber)"/>
+                        </then>
+                        <else>
+                            <if expression="operator == &quot;*&quot;">
+                                <then>
+                                    <assign variable="result" expression="multiple(firstNumber, secondNumber)"/>
+                                </then>
+                                <else>
+                                    <assign variable="result" expression="divide(firstNumber, secondNumber)"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="divide" type="Real" variable="div">
+        <parameters>
+            <parameter name="firstNumber" type="Real" array="False"/>
+            <parameter name="secondNumber" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="div" type="Real" array="False" size=""/>
+            <assign variable="div" expression="firstNumber / secondNumber"/>
+        </body>
+    </function>
+    <function name="minus" type="Real" variable="difference">
+        <parameters>
+            <parameter name="firstNumber" type="Real" array="False"/>
+            <parameter name="secondNumber" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="difference" type="Real" array="False" size=""/>
+            <assign variable="difference" expression="firstNumber - secondNumber"/>
+        </body>
+    </function>
+    <function name="multiple" type="Real" variable="product">
+        <parameters>
+            <parameter name="firstNumber" type="Real" array="False"/>
+            <parameter name="secondNumber" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="product" type="Real" array="False" size=""/>
+            <assign variable="product" expression="firstNumber * secondNumber"/>
+        </body>
+    </function>
+</flowgorithm>
