@@ -31,16 +31,14 @@ MENU = {
     }
 }
 
+profit = 0
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+}
 
-def printReport(choice):
-    """Print the report of the coffee ingredients and price."""
-    coffee = MENU[choice]
-    ingredients = coffee["ingredients"]
-    price = coffee["cost"]
-    for ing in ingredients:
-        print(f"{ing.title()}: {ingredients[ing]}")
-    print(f"Money: {price}")
-    
 
-def checkResources(choice):
-    
+
+
+
