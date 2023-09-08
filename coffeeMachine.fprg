@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Jinjia"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-07 06:38:42 PM"/>
+        <attribute name="created" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA3OzA2OjI2OjE2IFBNOzI5MDE="/>
+        <attribute name="edited" value="SmluamlhO1dJTkRPV1MtOVFDODA0NzsyMDIzLTA5LTA3OzA2OjM4OjQyIFBNOzE7MzAxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="coffeeMachineRunning" type="Boolean" array="False" size=""/>
+            <declare name="choice" type="String" array="False" size=""/>
+            <assign variable="coffeeMachineRunning" expression="True"/>
+            <while expression="coffeeMachineRunning">
+                <output expression="&quot;What would you like? (espresso/latte/cappuccino): &quot;" newline="True"/>
+                <input variable="choice"/>
+                <if expression="choice == &quot;off&quot;">
+                    <then>
+                        <assign variable="coffeeMachineRunning" expression="False"/>
+                    </then>
+                    <else>
+                        <if expression="choice == &quot;report&quot;">
+                            <then>
+                                <call expression="printReport()"/>
+                            </then>
+                            <else>
+                                <call expression="checkResourcesSufficient()"/>
+                                <if expression="checkResourcesSufficient() == True">
+                                    <then>
+                                        <call expression="processCoins()"/>
+                                        <call expression="checkTransaction()"/>
+                                        <if expression="checkTransaction() == True">
+                                            <then>
+                                                <call expression="printReport()"/>
+                                                <call expression="offerChange()"/>
+                                                <call expression="makeCoffee()"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="coffeMachineRunning" expression="False"/>
+                                                <output expression="&quot;Sorry that's not enough money. Money refuned.&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Sorry there is not enough {resource}&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
