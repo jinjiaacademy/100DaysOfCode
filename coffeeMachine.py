@@ -106,14 +106,14 @@ def coffeeMachine():
             coffeeMachineRunning = False
         else:
             if choice == "report":
-                printReport()
+                report = printReport()
             else:
                 if checkResourcesSufficient(choice):
                     totalCoinsInsert = processCoins()
                     coffeePrice = chooseCoffee(choice)["price"]
                     
                     if totalCoinsInsert >= coffeePrice:
-                        printReport(choice)
+                        report = printReport(choice)
                         change = totalCoinsInsert - coffeePrice
                         print(f"Here's ${change:.2f} dollars in change.")
                         print(f"Here is your {choice}. Enjoy!")
